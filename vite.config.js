@@ -3,6 +3,7 @@ import react from '@vitejs/plugin-react'
 import fs from 'node:fs'
 import path from 'node:path'
 import { execFile } from 'node:child_process'
+import work from './src/data/work.json' with { type: 'json' }
 
 /**
  * Dev-only content API for the /admin page.
@@ -386,8 +387,96 @@ function adminApi() {
   }
 }
 
+// ---------------------------------------------------------------------------
+// Link previews (Open Graph / Twitter cards). Chat apps and LinkedIn don't run
+// JavaScript, so each share link needs its own HTML with the tags baked in:
+// the build writes dist/view/<slug>/index.html per work item. Images come
+// from public/og/ (python3 scripts/make-og-images.py), else the thumbnail.
+// ---------------------------------------------------------------------------
+const SITE_URL = (
+  process.env.SITE_URL ||
+  (process.env.VERCEL_PROJECT_PRODUCTION_URL && `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`) ||
+  'https://miguelortiz-portfolio.vercel.app'
+).replace(/\/$/, '')
+
+const SITE = {
+  title: 'Miguel Ortiz | Product Management & Product Marketing',
+  description:
+    'Portfolio of Miguel Ortiz, a product manager and product marketer. Product specs, market research, go-to-market strategy, case studies, decks, and launch content.',
+  image: '/og/site.jpg',
+  path: '/',
+}
+
+const esc = (s) =>
+  String(s).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+
+function metaTags({ title, description, image, path: pagePath, type = 'website' }) {
+  const abs = (p) => (/^https?:/.test(p) ? p : SITE_URL + p)
+  return [
+    `<title>${esc(title)}</title>`,
+    `<meta name="description" content="${esc(description)}" />`,
+    `<link rel="canonical" href="${esc(abs(pagePath))}" />`,
+    `<meta property="og:site_name" content="Miguel Ortiz" />`,
+    `<meta property="og:type" content="${type}" />`,
+    `<meta property="og:title" content="${esc(title)}" />`,
+    `<meta property="og:description" content="${esc(description)}" />`,
+    `<meta property="og:url" content="${esc(abs(pagePath))}" />`,
+    `<meta property="og:image" content="${esc(abs(image))}" />`,
+    `<meta name="twitter:card" content="summary_large_image" />`,
+  ]
+    .map((t) => `    ${t}`)
+    .join('\n')
+}
+
+const OG_START = '<!-- og:start -->'
+const OG_END = '<!-- og:end -->'
+const withTags = (html, tags) =>
+  html.replace(/<!-- title, description[^>]*-->|<!-- og:start -->[\s\S]*?<!-- og:end -->/, `${OG_START}\n${tags}\n    ${OG_END}`)
+
+function itemPreview(item, root) {
+  const og = `/og/${item.id}.jpg`
+  const image = fs.existsSync(path.join(root, 'public', og)) ? og : item.thumbnail || SITE.image
+  const who = item.company ? `${item.company} · ` : ''
+  return {
+    title: `${item.title} | Miguel Ortiz`,
+    description: who + (item.description || item.goal || SITE.description),
+    image,
+    path: `/view/${item.slug || item.id}`,
+    type: 'article',
+  }
+}
+
+function sharePreviews() {
+  let root = process.cwd()
+  return {
+    name: 'share-previews',
+    configResolved(config) {
+      root = config.root
+    },
+    transformIndexHtml: (html) => withTags(html, metaTags(SITE)),
+    closeBundle() {
+      const dist = path.join(root, 'dist')
+      const indexFile = path.join(dist, 'index.html')
+      if (!fs.existsSync(indexFile)) return
+      const base = fs.readFileSync(indexFile, 'utf8')
+      let count = 0
+      for (const item of work) {
+        const html = withTags(base, metaTags(itemPreview(item, root)))
+        // Both the custom slug and the raw id resolve in the app, so give both previews.
+        for (const name of new Set([item.slug, item.id].filter(Boolean))) {
+          const dir = path.join(dist, 'view', name)
+          fs.mkdirSync(dir, { recursive: true })
+          fs.writeFileSync(path.join(dir, 'index.html'), html)
+          count++
+        }
+      }
+      console.log(`share-previews: wrote ${count} link-preview pages for ${SITE_URL}`)
+    },
+  }
+}
+
 export default defineConfig({
-  plugins: [react(), adminApi()],
+  plugins: [react(), adminApi(), sharePreviews()],
   server: {
     port: Number(process.env.PORT) || 5173,
     strictPort: false,
