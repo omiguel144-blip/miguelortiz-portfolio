@@ -10,10 +10,17 @@ export default function About() {
       <h1 className="page-title">
         Hi, I’m {profile.firstName}.
       </h1>
-      <div className="prose reveal" ref={ref}>
-        {profile.about.map((p, i) => (
-          <p key={i}>{p}</p>
-        ))}
+      <div className="about-intro reveal" ref={ref}>
+        {profile.photo && (
+          <figure className="about-photo">
+            <img src={profile.photo} alt={`Portrait of ${profile.name}`} width="747" height="1000" />
+          </figure>
+        )}
+        <div className="prose">
+          {profile.about.map((p, i) => (
+            <p key={i}>{p}</p>
+          ))}
+        </div>
       </div>
       <div className="skills-grid">
         {profile.skills.map((group) => (

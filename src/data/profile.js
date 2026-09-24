@@ -10,6 +10,7 @@ export const profile = {
   linkedin: 'https://www.linkedin.com/in/miguelortiz-garcia/',
   location: 'San Francisco Bay Area',
   resumePdf: '/resume.pdf',
+  photo: '/miguel-ortiz.jpg',
   about: [
     'I came to product through strategy: consulting engagements, market research, and competitive analysis. My Master of Technology Management from UC Santa Barbara’s College of Engineering sits on top of hands-on product work, from authoring all 20 product design documents for Loomi, an e-commerce platform, to shipping app revisions alongside designers and engineers as a product manager intern at College Sauce.',
     'What pulls me in is the space between the customer and the build. I like running the discovery interviews, turning what I hear into requirements a team can ship, and then telling the story of why it matters at launch. My art history background keeps me curious about how good products earn cultural weight, and I’m bilingual in English and Spanish.',
