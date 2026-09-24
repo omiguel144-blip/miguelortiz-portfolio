@@ -1,6 +1,7 @@
 [
   {
     "id": "cnsi-2-final-capstone-report-1",
+    "slug": "cnsi-capstone-report",
     "title": "Final Capstone Report",
     "category": "reports",
     "company": "California NanoSystems Institute",
@@ -23,6 +24,7 @@
   },
   {
     "id": "docusrch-student-affiliate-program-proposal-1",
+    "slug": "docusrch-affiliate-program-report",
     "title": "Student Affiliate Program Proposal",
     "category": "reports",
     "company": "Docusrch",
@@ -45,6 +47,7 @@
   },
   {
     "id": "ama-adobe-case-1",
+    "slug": "adobe-express-case",
     "title": "AMA Adobe Express Case",
     "category": "case-studies",
     "company": "Adobe Express",
@@ -67,6 +70,7 @@
   },
   {
     "id": "seavees-ambassadorship-proposal-report",
+    "slug": "seavees-ambassador-proposal",
     "title": "SeaVees Student Ambassadorship Proposal",
     "category": "reports",
     "company": "SeaVees",
@@ -88,6 +92,7 @@
   },
   {
     "id": "spotify-the-executive-pitch-4",
+    "slug": "spotify-predictive-a-and-r-model",
     "title": "Predictive A&R Model: Cutting Spotify Marketing Waste",
     "category": "decks",
     "company": "Spotify",
@@ -110,6 +115,7 @@
   },
   {
     "id": "loomi-nvc-application",
+    "slug": "loomi-new-venture-competition",
     "title": "New Venture Competition Application",
     "category": "case-studies",
     "company": "Loomi",
@@ -132,6 +138,7 @@
   },
   {
     "id": "instagram-com-reel-4",
+    "slug": "ada-instagram-4",
     "title": "Instagram Post",
     "category": "social",
     "company": "AD&A Museum, UC Santa Barbara",
@@ -150,6 +157,7 @@
   },
   {
     "id": "instagram-com-reel",
+    "slug": "ada-instagram-0",
     "title": "Instagram Post",
     "category": "social",
     "company": "AD&A Museum, UC Santa Barbara",
@@ -169,6 +177,7 @@
   },
   {
     "id": "1-docusrch-affiliate-proposal-presentation",
+    "slug": "docusrch-affiliate-program-deck",
     "title": "Docusrch Student Affiliate Program Proposal",
     "category": "decks",
     "company": "Docusrch",
@@ -191,6 +200,7 @@
   },
   {
     "id": "adamuseum-wordpress-com-link-1",
+    "slug": "ada-art-careers-los-angeles",
     "title": "Art Careers in the Heart of Los Angeles",
     "category": "content",
     "company": "AD&A Museum, UC Santa Barbara",
@@ -213,6 +223,7 @@
   },
   {
     "id": "adamuseum-wordpress-com-link",
+    "slug": "ada-internship-experience",
     "title": "The AD&A Internship Experience",
     "category": "content",
     "company": "AD&A Museum, UC Santa Barbara",
@@ -235,6 +246,7 @@
   },
   {
     "id": "summer-courses-reminder-post",
+    "slug": "college-sauce-summer-courses",
     "title": "Summer Courses Enrollment Reminder Post",
     "category": "content",
     "company": "College Sauce",
@@ -255,6 +267,7 @@
   },
   {
     "id": "introducing-our-leaderboard-college-sauce",
+    "slug": "college-sauce-referral-leaderboard",
     "title": "Referral Leaderboard Launch",
     "category": "content",
     "company": "College Sauce",
@@ -277,6 +290,7 @@
   },
   {
     "id": "instagram-ad-targeting-freshmen",
+    "slug": "college-sauce-freshmen-ad",
     "title": "Instagram Ad Targeting: College Freshmen",
     "category": "content",
     "company": "College Sauce",
@@ -298,6 +312,7 @@
   },
   {
     "id": "congrats-class-of-2024-seniors-ig-post",
+    "slug": "college-sauce-class-of-2024",
     "title": "Class of 2024 Seniors Congrats Post",
     "category": "content",
     "company": "College Sauce",
@@ -318,6 +333,7 @@
   },
   {
     "id": "exclusive-cs-deals-post",
+    "slug": "college-sauce-exclusive-deals",
     "title": "Exclusive Deals Post",
     "category": "content",
     "company": "College Sauce",
@@ -340,6 +356,7 @@
   },
   {
     "id": "cta-flyer-to-download-college-sauce",
+    "slug": "college-sauce-download-flyer",
     "title": "App Download CTA Flyer",
     "category": "content",
     "company": "College Sauce",
@@ -360,6 +377,7 @@
   },
   {
     "id": "cs-new-features-ig-post-1",
+    "slug": "college-sauce-story-feature",
     "title": "New Story Feature IG Post",
     "category": "content",
     "company": "College Sauce",
@@ -380,6 +398,7 @@
   },
   {
     "id": "cs-new-features-ig-post",
+    "slug": "college-sauce-new-categories",
     "title": "New Categories IG Post",
     "category": "content",
     "company": "College Sauce",
@@ -401,6 +420,7 @@
   },
   {
     "id": "instagram-com-reel-1",
+    "slug": "ada-instagram-1",
     "title": "Instagram Post",
     "category": "social",
     "company": "AD&A Museum, UC Santa Barbara",
@@ -419,6 +439,7 @@
   },
   {
     "id": "instagram-com-reel-7",
+    "slug": "ada-instagram-7",
     "title": "Instagram Post",
     "category": "social",
     "company": "AD&A Museum, UC Santa Barbara",
@@ -437,6 +458,7 @@
   },
   {
     "id": "instagram-com-reel-3",
+    "slug": "ada-instagram-3",
     "title": "Instagram Post",
     "category": "social",
     "company": "AD&A Museum, UC Santa Barbara",
@@ -455,6 +477,7 @@
   },
   {
     "id": "instagram-com-reel-2",
+    "slug": "ada-instagram-2",
     "title": "Instagram Post",
     "category": "social",
     "company": "AD&A Museum, UC Santa Barbara",
@@ -473,6 +496,7 @@
   },
   {
     "id": "instagram-com-reel-19",
+    "slug": "ada-instagram-19",
     "title": "Instagram Post",
     "category": "social",
     "company": "AD&A Museum, UC Santa Barbara",
@@ -491,6 +515,7 @@
   },
   {
     "id": "instagram-com-reel-5",
+    "slug": "ada-instagram-5",
     "title": "Instagram Post",
     "category": "social",
     "company": "AD&A Museum, UC Santa Barbara",
@@ -509,6 +534,7 @@
   },
   {
     "id": "instagram-com-reel-32",
+    "slug": "ada-instagram-32",
     "title": "Instagram Post",
     "category": "social",
     "company": "AD&A Museum, UC Santa Barbara",
@@ -527,6 +553,7 @@
   },
   {
     "id": "instagram-com-reel-11",
+    "slug": "ada-instagram-11",
     "title": "Instagram Post",
     "category": "social",
     "company": "AD&A Museum, UC Santa Barbara",
@@ -545,6 +572,7 @@
   },
   {
     "id": "instagram-com-reel-31",
+    "slug": "ada-instagram-31",
     "title": "Instagram Post",
     "category": "social",
     "company": "AD&A Museum, UC Santa Barbara",
@@ -563,6 +591,7 @@
   },
   {
     "id": "instagram-com-reel-15",
+    "slug": "ada-instagram-15",
     "title": "Instagram Post",
     "category": "social",
     "company": "AD&A Museum, UC Santa Barbara",
@@ -581,6 +610,7 @@
   },
   {
     "id": "instagram-com-reel-12",
+    "slug": "ada-instagram-12",
     "title": "Instagram Post",
     "category": "social",
     "company": "AD&A Museum, UC Santa Barbara",
@@ -599,6 +629,7 @@
   },
   {
     "id": "instagram-com-reel-14",
+    "slug": "ada-instagram-14",
     "title": "Instagram Reel",
     "category": "social",
     "company": "AD&A Museum, UC Santa Barbara",
@@ -617,6 +648,7 @@
   },
   {
     "id": "instagram-com-reel-21",
+    "slug": "ada-instagram-21",
     "title": "Instagram Post",
     "category": "social",
     "company": "AD&A Museum, UC Santa Barbara",
@@ -635,6 +667,7 @@
   },
   {
     "id": "instagram-com-reel-25",
+    "slug": "ada-instagram-25",
     "title": "Instagram Post",
     "category": "social",
     "company": "AD&A Museum, UC Santa Barbara",
@@ -653,6 +686,7 @@
   },
   {
     "id": "instagram-com-reel-23",
+    "slug": "ada-instagram-23",
     "title": "Instagram Reel",
     "category": "social",
     "company": "AD&A Museum, UC Santa Barbara",
@@ -671,6 +705,7 @@
   },
   {
     "id": "instagram-com-reel-28",
+    "slug": "ada-instagram-28",
     "title": "Instagram Reel",
     "category": "social",
     "company": "AD&A Museum, UC Santa Barbara",
@@ -689,6 +724,7 @@
   },
   {
     "id": "instagram-com-reel-17",
+    "slug": "ada-instagram-17",
     "title": "Instagram Reel",
     "category": "social",
     "company": "AD&A Museum, UC Santa Barbara",
@@ -707,6 +743,7 @@
   },
   {
     "id": "instagram-com-reel-18",
+    "slug": "ada-instagram-18",
     "title": "Instagram Post",
     "category": "social",
     "company": "AD&A Museum, UC Santa Barbara",
@@ -725,6 +762,7 @@
   },
   {
     "id": "instagram-com-reel-27",
+    "slug": "ada-instagram-27",
     "title": "Instagram Post",
     "category": "social",
     "company": "AD&A Museum, UC Santa Barbara",
@@ -743,6 +781,7 @@
   },
   {
     "id": "instagram-com-reel-22",
+    "slug": "ada-instagram-22",
     "title": "Instagram Reel",
     "category": "social",
     "company": "AD&A Museum, UC Santa Barbara",
@@ -761,6 +800,7 @@
   },
   {
     "id": "instagram-com-reel-29",
+    "slug": "ada-instagram-29",
     "title": "Instagram Reel",
     "category": "social",
     "company": "AD&A Museum, UC Santa Barbara",
@@ -779,6 +819,7 @@
   },
   {
     "id": "instagram-com-reel-24",
+    "slug": "ada-instagram-24",
     "title": "Instagram Post",
     "category": "social",
     "company": "AD&A Museum, UC Santa Barbara",
@@ -796,6 +837,7 @@
   },
   {
     "id": "instagram-com-reel-16",
+    "slug": "ada-instagram-16",
     "title": "Instagram Post",
     "category": "social",
     "company": "AD&A Museum, UC Santa Barbara",
@@ -813,6 +855,7 @@
   },
   {
     "id": "instagram-com-reel-26",
+    "slug": "ada-instagram-26",
     "title": "Instagram Post",
     "category": "social",
     "company": "AD&A Museum, UC Santa Barbara",
@@ -830,6 +873,7 @@
   },
   {
     "id": "instagram-com-reel-13",
+    "slug": "ada-instagram-13",
     "title": "Instagram Post",
     "category": "social",
     "company": "AD&A Museum, UC Santa Barbara",
@@ -847,6 +891,7 @@
   },
   {
     "id": "instagram-com-reel-6",
+    "slug": "ada-instagram-6",
     "title": "Instagram Post",
     "category": "social",
     "company": "AD&A Museum, UC Santa Barbara",
@@ -864,6 +909,7 @@
   },
   {
     "id": "instagram-com-reel-30",
+    "slug": "ada-instagram-30",
     "title": "Instagram Post",
     "category": "social",
     "company": "AD&A Museum, UC Santa Barbara",
@@ -881,6 +927,7 @@
   },
   {
     "id": "instagram-com-reel-10",
+    "slug": "ada-instagram-10",
     "title": "Instagram Post",
     "category": "social",
     "company": "AD&A Museum, UC Santa Barbara",
@@ -898,6 +945,7 @@
   },
   {
     "id": "imc-plan-group-5",
+    "slug": "healing-justice-imc-plan",
     "title": "Integrated Marketing Communications Plan",
     "category": "case-studies",
     "company": "Healing Justice SB",

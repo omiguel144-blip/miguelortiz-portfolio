@@ -1655,3 +1655,99 @@ h4 {
     grid-template-columns: 1fr;
   }
 }
+
+/* ------------------------------------------------------------------ */
+/*  Share link button + view-only share page (/view/:slug)             */
+/* ------------------------------------------------------------------ */
+.share-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 14px;
+  padding: 7px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  background: rgba(255, 255, 255, 0.14);
+  color: #fff;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.share-btn:hover {
+  background: rgba(255, 255, 255, 0.26);
+}
+
+.share-btn-light {
+  border-color: var(--line);
+  background: var(--paper-raised);
+  color: var(--ink);
+  box-shadow: var(--shadow-card);
+}
+
+.share-btn-light:hover {
+  background: var(--paper-raised);
+  border-color: var(--ink);
+}
+
+.view-head {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.view-goal {
+  margin-top: 14px;
+  max-width: 62ch;
+  font-size: 16.5px;
+  color: var(--ink-soft);
+}
+
+.view-body {
+  max-width: 860px;
+  margin: 32px auto 0;
+}
+
+.pdf-pages {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}
+
+.pdf-page {
+  width: 100%;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+}
+
+.pdf-page canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.pdf-loading {
+  padding: 60px 0;
+  text-align: center;
+  color: var(--ink-faint);
+}
+
+.view-foot {
+  max-width: 860px;
+  margin: 40px auto 0;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--ink-soft);
+  font-size: 14.5px;
+}

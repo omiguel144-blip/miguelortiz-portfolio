@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 import Embed from './embeds/Embed.jsx'
+import ShareButton from './ShareButton.jsx'
 import { categoryById } from '../data/categories.js'
 
 function formatDate(d) {
@@ -72,6 +73,7 @@ export default function ItemOverlay({ item, onClose }) {
           <div className="overlay-side-inner">
             {item.company && <div className="tab-company">{item.company}</div>}
             <h2>{item.title}</h2>
+            <ShareButton item={item} />
             {item.goal && (
               <div className="side-goal">
                 <strong>Goal</strong>

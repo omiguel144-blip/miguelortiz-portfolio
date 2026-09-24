@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "framer-motion": "^11.11.17",
+    "pdfjs-dist": "^6.1.200",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.28.0"
@@ -17,7 +18,6 @@
   "devDependencies": {
     "@anthropic-ai/sdk": "^0.111.0",
     "@vitejs/plugin-react": "^4.3.4",
-    "pdfjs-dist": "^6.1.200",
     "vite": "^5.4.11"
   }
 }

@@ -6,6 +6,7 @@ import Home from './pages/Home.jsx'
 import About from './pages/About.jsx'
 import Resume from './pages/Resume.jsx'
 import Contact from './pages/Contact.jsx'
+import View from './pages/View.jsx'
 
 // Admin only exists in dev — it's excluded from the production bundle.
 const Admin = import.meta.env.DEV ? lazy(() => import('./pages/Admin.jsx')) : null
@@ -29,6 +30,7 @@ export default function App() {
           <Route path="/about" element={<About />} />
           <Route path="/resume" element={<Resume />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/view/:slug" element={<View />} />
           {Admin && (
             <Route
               path="/admin"

@@ -1,6 +1,8 @@
 import React, { useRef, useState } from 'react'
 import { categories } from '../data/categories.js'
 import initialWork from '../data/work.json'
+import { getPdfjs } from '../lib/pdfjs.js'
+import { slugify, itemSlug } from '../lib/share.js'
 
 // ---------------------------------------------------------------------------
 // DEV-ONLY content manager (http://localhost:5173/admin while `npm run dev`).
@@ -55,21 +57,6 @@ async function uploadFile(file) {
     r.readAsDataURL(file)
   })
   return uploadBase64(file.name, dataBase64)
-}
-
-// ---- PDF reading (pdf.js, loaded on demand; dev-only page so never bundled) ----
-let pdfjsPromise = null
-function getPdfjs() {
-  if (!pdfjsPromise) {
-    pdfjsPromise = Promise.all([
-      import('pdfjs-dist'),
-      import('pdfjs-dist/build/pdf.worker.min.mjs?url'),
-    ]).then(([lib, worker]) => {
-      lib.GlobalWorkerOptions.workerSrc = worker.default
-      return lib
-    })
-  }
-  return pdfjsPromise
 }
 
 // Extracts text from the first pages and renders page 1 to a PNG thumbnail.
@@ -544,6 +531,7 @@ export default function Admin() {
                     <li>
                       <ItemEditor
                         item={editing}
+                        allItems={items}
                         onChange={(next) => update(items.map((i) => (i.id === next.id ? next : i)))}
                         onUploadThumb={async (file) => {
                           const path = await uploadFile(file)
@@ -576,7 +564,7 @@ export default function Admin() {
   )
 }
 
-function ItemEditor({ item, onChange, onUploadThumb }) {
+function ItemEditor({ item, allItems, onChange, onUploadThumb }) {
   const set = (key, value) => onChange({ ...item, [key]: value })
   const thumbInput = useRef(null)
   const [coverState, setCoverState] = useState({ busy: false, error: '' })
@@ -723,6 +711,7 @@ function ItemEditor({ item, onChange, onUploadThumb }) {
             }
           />
         </div>
+        <ShareLinkField item={item} allItems={allItems} onChange={(v) => set('slug', v)} />
         <div className="field">
           <label htmlFor={`${item.id}-campaign`}>Campaign (posts sharing a name stack together)</label>
           <input
@@ -755,6 +744,48 @@ function ItemEditor({ item, onChange, onUploadThumb }) {
           />
         </div>
       </div>
+    </div>
+  )
+}
+
+// Custom share URL: /view/<slug>. Typing is sanitized live; clearing it falls
+// back to the item's id. Warns when another item already uses the name.
+function ShareLinkField({ item, allItems, onChange }) {
+  const [copied, setCopied] = useState(false)
+  const current = itemSlug(item)
+  const taken = allItems.some((o) => o.id !== item.id && itemSlug(o) === current)
+  const url = `${window.location.origin}/view/${current}`
+  return (
+    <div className="field full">
+      <label htmlFor={`${item.id}-slug`}>Share link (view only)</label>
+      <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
+        <span style={{ color: 'var(--ink-faint)', fontSize: 13, whiteSpace: 'nowrap' }}>/view/</span>
+        <input
+          id={`${item.id}-slug`}
+          value={item.slug || ''}
+          placeholder={item.id}
+          onChange={(e) => onChange(e.target.value.toLowerCase().replace(/[^a-z0-9-]+/g, '-').replace(/-{2,}/g, '-'))}
+          onBlur={(e) => onChange(slugify(e.target.value))}
+        />
+        <button
+          type="button"
+          className="btn btn-ghost"
+          style={{ padding: '8px 16px' }}
+          onClick={async () => {
+            await navigator.clipboard.writeText(url)
+            setCopied(true)
+            setTimeout(() => setCopied(false), 1500)
+          }}
+        >
+          {copied ? 'Copied' : 'Copy'}
+        </button>
+      </div>
+      {taken && (
+        <small style={{ color: '#c0392b' }}>Another item already uses this link. Pick a different name.</small>
+      )}
+      <small style={{ color: 'var(--ink-faint)' }}>
+        Changing this breaks any link you already sent for this item.
+      </small>
     </div>
   )
 }
