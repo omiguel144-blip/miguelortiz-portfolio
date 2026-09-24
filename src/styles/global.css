@@ -1659,11 +1659,14 @@ h4 {
 /* ------------------------------------------------------------------ */
 /*  Share link button + view-only share page (/view/:slug)             */
 /* ------------------------------------------------------------------ */
+.share {
+  margin-top: 14px;
+}
+
 .share-btn {
   display: inline-flex;
   align-items: center;
   gap: 7px;
-  margin-top: 14px;
   padding: 7px 14px;
   border-radius: 999px;
   border: 1px solid rgba(255, 255, 255, 0.45);
@@ -1680,16 +1683,63 @@ h4 {
   background: rgba(255, 255, 255, 0.26);
 }
 
-.share-btn-light {
+.share-btn-light .share-btn {
   border-color: var(--line);
   background: var(--paper-raised);
   color: var(--ink);
   box-shadow: var(--shadow-card);
 }
 
-.share-btn-light:hover {
+.share-btn-light .share-btn:hover {
   background: var(--paper-raised);
   border-color: var(--ink);
+}
+
+.share-panel {
+  margin-top: 10px;
+  max-width: 440px;
+  padding: 10px;
+  border-radius: 14px;
+  background: #fff;
+  color: var(--ink);
+  box-shadow: 0 1px 2px rgba(16, 26, 45, 0.08), 0 10px 28px rgba(16, 26, 45, 0.16);
+}
+
+.share-row {
+  display: flex;
+  gap: 8px;
+}
+
+.share-row input {
+  flex: 1;
+  min-width: 0;
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  font: inherit;
+  font-size: 13px;
+  color: var(--ink);
+  background: var(--paper);
+}
+
+.share-row button {
+  flex: none;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 8px;
+  background: var(--ink);
+  color: #fff;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.share-note {
+  margin: 8px 2px 0;
+  font-size: 12.5px;
+  line-height: 1.4;
+  color: var(--ink-soft);
 }
 
 .view-head {
