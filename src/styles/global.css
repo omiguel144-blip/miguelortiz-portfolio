@@ -216,6 +216,45 @@ h4 {
   background: var(--ink);
 }
 
+.nav-name {
+  white-space: nowrap;
+}
+
+/* Phones: tighten the pill so all four links fit without widening the page */
+@media (max-width: 480px) {
+  .nav-inner {
+    gap: 8px;
+    padding: 0 6px 0 16px;
+  }
+  .nav-name {
+    font-size: 15px;
+  }
+  .nav-name span {
+    display: none;
+  }
+  .nav-links a {
+    font-size: 13.5px;
+    padding: 8px 10px;
+  }
+}
+
+@media (max-width: 360px) {
+  .nav-inner {
+    gap: 4px;
+    padding: 0 5px 0 14px;
+  }
+  .nav-name {
+    font-size: 14px;
+  }
+  .nav-links {
+    gap: 0;
+  }
+  .nav-links a {
+    font-size: 13px;
+    padding: 8px 7px;
+  }
+}
+
 /* ------------------------------------------------------------------ */
 /*  Hero — inset rounded panel with Plaid's blue gradient              */
 /* ------------------------------------------------------------------ */
@@ -1146,7 +1185,8 @@ h4 {
 /*  Inner pages                                                        */
 /* ------------------------------------------------------------------ */
 .page {
-  padding: clamp(48px, 7vw, 88px) 0;
+  padding-top: clamp(48px, 7vw, 88px);
+  padding-bottom: clamp(48px, 7vw, 88px);
   min-height: 60vh;
 }
 
